@@ -1,21 +1,19 @@
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Header } from "./components/Header";
-
+import { Add } from "./components/Add";
+import { Watched } from "./components/Watched";
+import { Watchlist } from "./components/Watchlist";
+import "./App.css";
+import "./lib/font-awesome/css/all.min.css";
 function App() {
   return (
     <Router>
       <Header />
       <Routes>
-        <Route path="/" element="{/}">
-          COMPONENT #1
-        </Route>
-        <Route path="/" element="{/}">
-          COMPONENT #2
-        </Route>
-        <Route path="/" element="{/}">
-          COMPONENT #3
-        </Route>
+        <Route exact path="./components/Watchlist.js" element={<Watchlist />} />
+        <Route exact path="./components/Watched.js" element={<Watched />} />
+        <Route exact path="./components/Add.js" element={<Add />} />
       </Routes>
     </Router>
   );
